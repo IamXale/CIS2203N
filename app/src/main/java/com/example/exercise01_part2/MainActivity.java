@@ -16,11 +16,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // SABOTAGE: This will cause a NullPointerException if not handled.
-        TextView counterDisplay = null;
-        counterDisplay.setText("0");
-
-        // Proper initialization (we'll move this after fixing the crash)
         tvCounter = findViewById(R.id.tvCounter);
         Button btnIncrement = findViewById(R.id.btnIncrement);
 
@@ -31,5 +26,18 @@ public class MainActivity extends AppCompatActivity {
                 tvCounter.setText(String.valueOf(mCounter));
             }
         });
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putInt("COUNT_KEY", mCounter);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        mCounter = savedInstanceState.getInt("COUNT_KEY");
+        tvCounter.setText(String.valueOf(mCounter));
     }
 }
