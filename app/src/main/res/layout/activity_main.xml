@@ -12,7 +12,7 @@
         android:layout_height="95dp"
         android:layout_margin="5dp"
         android:textAlignment="textEnd"
-        android:textSize="48dp"
+        android:textSize="56dp"
         android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -24,7 +24,7 @@
         android:layout_height="95dp"
         android:layout_margin="5dp"
         android:textAlignment="textEnd"
-        android:textSize="48dp"
+        android:textSize="56dp"
         android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -257,5 +257,17 @@
         android:backgroundTint="@color/btn_operator"
         app:layout_constraintStart_toEndOf="@+id/btnEquals"
         app:layout_constraintTop_toBottomOf="@+id/btnSubtract" />
+
+    <Button
+        android:id="@+id/btnCustom"
+        android:layout_width="90dp"
+        android:layout_height="80dp"
+        android:layout_margin="5dp"
+        android:layout_marginTop="16dp"
+        android:text="918"
+        android:textSize="20sp"
+        android:backgroundTint="@color/btn_operator"
+        app:layout_constraintStart_toEndOf="@+id/btnEquals"
+        app:layout_constraintTop_toBottomOf="@+id/btnAdd" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
